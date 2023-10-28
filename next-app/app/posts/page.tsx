@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { getPosts } from '../utils/services/api'
 import { useAppSelector } from '../redux/app';
 import PostCard from '../components/PostCard';
-
+import { useRouter } from 'next/navigation';
+import {AiFillPlusCircle} from 'react-icons/ai'
 const PostComp = () => {
+    const router = useRouter();
     const [posts, setPosts] = useState([]);
     const user = useAppSelector((state) => state.auth)
     useEffect(()=>{
@@ -31,6 +33,9 @@ const PostComp = () => {
             )
           }
           
+        </div>
+        <div className='absolute right-24 bottom-20'> 
+          <button onClick={() => router.push('/createPost')} className='px-5 py-2 rounded-lg bg-gray-800 text-white flex flex-row items-center gap-2'><AiFillPlusCircle className="text-lg"/><span>Create Blog</span></button>
         </div>
 
       </div>

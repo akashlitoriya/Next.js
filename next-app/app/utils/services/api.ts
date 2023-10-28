@@ -1,6 +1,7 @@
 import { apiConnector }  from "../apiConnector";
 import { authAPI } from "../apis";
 import { postAPI } from "../apis";
+import {homeAPI} from '../apis'
 import {toast} from 'react-hot-toast'
 
 export const login = async(data: any) => {
@@ -58,4 +59,29 @@ export const getPosts = async(data : any, token: any) => {
     }
     toast.dismiss(toastId);
     return result;
+}
+
+export const createPost = async(data:any, token: any) => {
+    const toastId = toast.loading('Creating post...');
+    let result = null;
+    try{
+        const res = await apiConnector("POST", postAPI.createPost, data, {Authorization: `Bearer ${token}`}, null);
+        if(!res.data.success){
+            throw new Error(res.data.message);
+
+        }
+        toast.success('Created post successfully')
+        result = res.data.data;
+    }catch(error){
+        toast.error('Error creating post')
+        console.log("Error creating post: ", error)
+    }
+    toast.dismiss(toastId);
+    return result;
+}
+
+
+export const getFeed = async() => {
+    const result = await apiConnector('GET', homeAPI.getFeed, null, null, null);
+    return result.data.data;
 }

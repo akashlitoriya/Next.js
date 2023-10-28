@@ -105,3 +105,22 @@ exports.deletePost = async(req, res) => {
     }
 
 }
+
+
+export const getFeed = async(req, res) => {
+    try{
+        const post = await Post.find({}).populate('user');
+        return res.status(200).json({
+            success: true,
+            message: "Successfully fetched  feed",
+            data: post,
+        })
+    }catch(err){
+        console.log(err);
+        return res.status(500).json({
+            success:false,
+            message:"Failed to fetch feed",
+            error: err.message
+        })
+    }
+}

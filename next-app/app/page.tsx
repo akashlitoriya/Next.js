@@ -1,7 +1,9 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import ProductCard from './components/ProductCard'
 import Hero from './components/Home'
+import Feed from './components/Feed'
 export default function Home() {
   return (
     <main>
@@ -16,6 +18,7 @@ export default function Home() {
        <ProductCard />  */}
 
        <Hero />
+       <Feed />
     </main>
   )
 }

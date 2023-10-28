@@ -11,3 +11,7 @@ export const postAPI = {
     deletePost: `${base_url}/api/post/deletePost`,
     createComment: `${base_url}/api/post/createComment`,
 }
+
+export const homeAPI = {
+    getFeed: `${base_url}/api/post/getFeed`
+}
