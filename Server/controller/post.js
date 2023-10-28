@@ -107,7 +107,7 @@ exports.deletePost = async(req, res) => {
 }
 
 
-export const getFeed = async(req, res) => {
+exports.getFeed = async(req, res) => {
     try{
         const post = await Post.find({}).populate('user');
         return res.status(200).json({

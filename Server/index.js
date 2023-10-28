@@ -17,7 +17,7 @@ const port = process.env.PORT || 5000;
 
 app.use(
     cors({
-        origin: 'https://next-js-tau-nine.vercel.app/',
+        origin: 'https://next-js-tau-nine.vercel.app',
         credentials: true,
     })
 )

@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 import { createPost } from '../utils/services/api'
 import { useAppSelector } from '../redux/app'
-const page = () => {
+const CreatePost = () => {
     const router = useRouter();
     const user = useAppSelector((state) => state.auth);
     const {register, handleSubmit} = useForm();
@@ -41,4 +41,4 @@ const page = () => {
   )
 }
 
-export default page
+export default CreatePost
