@@ -1,11 +1,14 @@
 'use client'
 import React from 'react'
 import { useForm } from 'react-hook-form';
-import { apiConnector } from '@/utils/apiConnector';
+import { signup } from '../utils/services/api';
+import { useRouter } from 'next/navigation';
 const SignUpComp = () => {
+    const router = useRouter();
     const {register, handleSubmit, formState: {errors}} = useForm();
     const onSubmit = async(data:any) => {
-        const res = await apiConnector('POST', '')
+        const res = await signup(data);
+        router.push('/login')
     }
   return (
     <div className='w-full h-full flex justify-center items-center'>

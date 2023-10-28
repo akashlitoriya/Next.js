@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from './components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
+import { ReduxProvider } from './redux/provider'
+import { Toaster } from 'react-hot-toast'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,9 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} p-0 m-0 overflow-x-hidden min-h-screen  w-screen`}>
-        <Navbar />
-        {children}
-        </body>
+        <ReduxProvider>
+          <Navbar />
+          {children}
+          <Toaster />
+        </ReduxProvider>
+      </body>
     </html>
   )
 }
