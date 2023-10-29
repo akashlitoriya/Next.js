@@ -24,7 +24,7 @@ app.use(
 app.use(
     fileupload({
         useTempFiles: true,
-        tempFileDir: '/temp'
+        tempFileDir: '/newFolderForAttachment'
     })
 )
 
