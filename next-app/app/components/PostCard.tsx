@@ -22,7 +22,7 @@ const PostCard = ({
 
   const isVideo = attachment?.includes('mp4');
   return (
-    <div className='flex flex-col gap-3 shadow-md rounded-lg w-fit min-w-[250px] hover:scale-100 shadow-gray-700'>
+    <div className='flex flex-col gap-3 shadow-md rounded-lg w-fit h-fit min-w-[265px] hover:scale-100 shadow-gray-700'>
       {
         attachment && (
             

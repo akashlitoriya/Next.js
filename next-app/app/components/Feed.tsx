@@ -16,7 +16,7 @@ const Feed = () => {
     <div className='w-full h-full'>
       <div className='w-10/12 mx-auto '>
         <h1 className='text-3xl font-bold font-sans text-gray-950'>Feed</h1>
-        <div className='flex flex-col md:flex-row gap-7'>
+        <div className='flex flex-col flex-wrap md:flex-row gap-7'>
           {
             posts.length > 0 && (
               posts.map((post:any)=>(
