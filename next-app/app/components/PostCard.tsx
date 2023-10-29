@@ -38,7 +38,7 @@ const PostCard = ({
         <button onClick={() => setCommentSection(!commentSection)}><MdOutlineInsertComment /></button>
         <div className='text-sm font-medium'>
           {
-            (user.name)
+            (user?.name)
           }
         </div>
       </div>
