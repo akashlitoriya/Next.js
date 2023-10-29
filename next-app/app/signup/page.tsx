@@ -24,11 +24,11 @@ const SignUpComp = () => {
                 <input type='email' {...register("email", {required:true})} className='border-b-2 rounded-lg bg-gray-100 border-gray-700 text-gray-950 p-3' placeholder='Enter your email'/>
             </div>
             <div className='flex flex-col gap-1'>
-                <label htmlFor='password'>Email<sup className='text-red-700 text-lg'>*</sup></label>
+                <label htmlFor='password'>Password<sup className='text-red-700 text-lg'>*</sup></label>
                 <input type='text' {...register("password", {required:true})} className='border-b-2 rounded-lg bg-gray-100 border-gray-700 text-gray-950 p-3' placeholder='Type your password'/>
             </div>
             <div className='flex flex-col gap-1'>
-                <label htmlFor='confirmPassword'>Email<sup className='text-red-700 text-lg'>*</sup></label>
+                <label htmlFor='confirmPassword'>Confirm Password<sup className='text-red-700 text-lg'>*</sup></label>
                 <input type='text' {...register("confirmPassword", {required:true})} className='border-b-2 rounded-lg bg-gray-100 border-gray-700 text-gray-950 p-3' placeholder='Re-type your password'/>
             </div>
             <div className='flex justify-between'>
