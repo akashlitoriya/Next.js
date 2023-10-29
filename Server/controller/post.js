@@ -6,7 +6,11 @@ require('dotenv').config();
 exports.createPost = async(req, res) => {
     try{
         const {title, body} = req.body;
-        const {attachment} = req.files;
+        let attachment = null;
+        if(req.files){
+            let {attachmentFile} = req.files;
+            attachment = attachmentFile;
+        }
         const user = req.user;
         
         if(!title || !body || !user){
