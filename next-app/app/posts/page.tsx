@@ -18,7 +18,7 @@ const PostComp = () => {
         fetchPosts();
     },[])
 
-    
+    if(!posts) return <h1>No post Available</h1>
   return (
     <div className='w-full h-full'>
       <div className='flex flex-col w-10/12 mx-auto gap-10 mt-10'>
