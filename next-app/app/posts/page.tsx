@@ -23,7 +23,7 @@ const PostComp = () => {
     <div className='w-full h-full'>
       <div className='flex flex-col w-10/12 mx-auto gap-10 mt-10'>
         <h1 className='text-3xl font-bold font-sans text-gray-950'>Posts</h1>
-        <div className='flex flex-row gap-7'>
+        <div className='flex flex-col md:flex-row gap-7'>
           {
             posts.length > 0 && (
               posts.map((post:any)=>(
@@ -34,7 +34,7 @@ const PostComp = () => {
           }
           
         </div>
-        <div className='absolute right-24 bottom-20'> 
+        <div className='absolute md:right-24 md:bottom-20'> 
           <button onClick={() => router.push('/createPost')} className='px-5 py-2 rounded-lg bg-gray-800 text-white flex flex-row items-center gap-2'><AiFillPlusCircle className="text-lg"/><span>Create Blog</span></button>
         </div>
 

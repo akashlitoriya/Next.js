@@ -6,6 +6,7 @@ type PostCardProps = {
     attachment?: string,
     body: string,
     title: string,
+    user: any,
 }
 
 const PostCard = ({
@@ -13,15 +14,20 @@ const PostCard = ({
     attachment,
     body,
     title,
+    user,
 }: PostCardProps) => {
-  const user = useAppSelector((state) => state.auth);
+  //const userStore = useAppSelector((state) => state.auth);
   const [comment, setComment] = React.useState('');
   const [commentSection, setCommentSection] = React.useState(false);
+
+  const isVideo = attachment?.includes('mp4');
   return (
     <div className='flex flex-col gap-3 shadow-md rounded-lg w-fit hover:scale-100 shadow-gray-700'>
       {
         attachment && (
-            <img src = {attachment} height={100} className='h-[150px] object-contain rounded-t-lg' alt='post attachment' />
+            
+              isVideo? (<video src= {attachment} height={100}/>): (<img src = {attachment} height={100} className='h-[150px] object-contain rounded-t-lg' alt='post attachment' />)
+            
         )
       }
       <div className='flex flex-col gap-1 p-3'>
@@ -31,7 +37,9 @@ const PostCard = ({
       <div className='p-3 border-t-[1px] border-gray-500 flex justify-between items-center'>
         <button onClick={() => setCommentSection(!commentSection)}><MdOutlineInsertComment /></button>
         <div className='text-sm font-medium'>
-          {user.name}
+          {
+            (user.name)
+          }
         </div>
       </div>
       {
